@@ -62,6 +62,6 @@ class Customer{
 
     @Override
     public String toString(){
-        return "Customer{" + "CustomerId=" + this.customerId + ", name='" + this.customerName + '\'' + ", amountSpent='" + this.amountSpent + '\'' + ", date='" + this.purchaseDate + '}';
+        return "Customer{" + "customerId=" + this.customerId + ", customerName='" + this.customerName + '\'' + ", amountSpent='" + this.amountSpent + '\'' + ", purchaseDate='" + this.purchaseDate + '}';
     }
 }

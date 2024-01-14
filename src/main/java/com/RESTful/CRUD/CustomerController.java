@@ -3,7 +3,6 @@ package com.RESTful.CRUD;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -126,12 +125,8 @@ class CustomerController{
                 if (customer.getPurchaseDate() != null) {
                     response.setPurchaseDate(customer.getPurchaseDate());
                 }
-                try {
-                    repository.save(response);
-                    return new ResponseEntity<>(HttpStatus.OK);
-                } catch (DataIntegrityViolationException e) {
-                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-                }
+                repository.save(response);
+                return new ResponseEntity<>(HttpStatus.OK);
             }
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
