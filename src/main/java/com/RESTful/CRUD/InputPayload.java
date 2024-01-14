@@ -1,18 +1,18 @@
 package com.RESTful.CRUD;
 
 public class InputPayload {
-    private Long id;
+    private Integer customerId;
 
     public InputPayload() {}
-    public InputPayload(Long id){
-        this.id = id;
+    public InputPayload(Integer customerId){
+        this.customerId = customerId;
     }
     
-    public Long getId() {
-        return this.id;
+    public Integer getCustomerId() {
+        return this.customerId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 }

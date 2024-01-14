@@ -16,9 +16,9 @@ class LoadDatabase {
   CommandLineRunner initDatabase(CustomerRepository repository) {
 
     return args -> {
-      log.info("Preloading " + repository.save(new Customer("Charlie", Long.valueOf("100"), LocalDate.of(2023, 10, 1))));
-      log.info("Preloading " + repository.save(new Customer("Alan", Long.valueOf("40"), LocalDate.of(2024, 1, 5))));
-      log.info("Preloading " + repository.save(new Customer("Jake", Long.valueOf("80"), LocalDate.of(2022, 9, 28))));
+      log.info("Preloading " + repository.save(new Customer(1, "Charlie", Double.valueOf("100"), LocalDate.of(2023, 10, 1))));
+      log.info("Preloading " + repository.save(new Customer(2, "Alan", Double.valueOf("40"), LocalDate.of(2024, 1, 5))));
+      log.info("Preloading " + repository.save(new Customer(3, "Jake", Double.valueOf("80"), LocalDate.of(2022, 9, 28))));
     };
   }
 }

@@ -8,50 +8,60 @@ import jakarta.persistence.*;
 @Entity
 @Table
 class Customer{
-    private @Id @GeneratedValue Long customerId;
+    // private @Id @GeneratedValue Long customerId;
+    private @Id Integer customerId;
     String customerName;
-    private Long amountSpent;
+    private Double amountSpent;
     private LocalDate purchaseDate;
 
     Customer() {} // empty constructor
 
-    public Customer(String customerName, Long amountSpent, LocalDate purchaseDate){
+    public Customer(Integer customerId, String customerName, Double amountSpent, LocalDate purchaseDate){
+        this.customerId = customerId;
         this.customerName = customerName;
         this.amountSpent = amountSpent;
         this.purchaseDate = purchaseDate;
     }
 
-    public String getCustomer() {
+    public Integer getCustomerId(){
+        return this.customerId;
+    }
+
+    public String getCustomerName(){
         return this.customerName;
     }
 
-    public Long getAmountSpent() {
+    public Double getAmountSpent(){
         return this.amountSpent;
     }
 
-    public LocalDate getPurchaseDate() {
+    public LocalDate getPurchaseDate(){
         return this.purchaseDate;
     }
 
-    public void setCustomerName(String customerName) {
+    public void setCustomerId(Integer customerId){
+        this.customerId = customerId;
+    }
+
+    public void setCustomerName(String customerName){
         this.customerName = customerName;
     }
 
-    public void setAmountSpent (Long amountSpent) {
+    public void setAmountSpent (Double amountSpent){
         this.amountSpent = amountSpent;
     }
 
-    public void setPurchaseDate (LocalDate purchaseDate) {
+    public void setPurchaseDate (LocalDate purchaseDate){
         this.purchaseDate = purchaseDate;
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode(){
         return Objects.hash(this.customerId, this.customerName, this.amountSpent, this.purchaseDate);
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return "Customer{" + "CustomerId=" + this.customerId + ", name='" + this.customerName + '\'' + ", amountSpent='" + this.amountSpent + '\'' + ", date='" + this.purchaseDate + '}';
     }
 }
