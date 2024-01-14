@@ -48,8 +48,6 @@ class CustomerController{
             Optional<Customer> optionalEntity = repository.findById(id);
 
             if (optionalEntity.isPresent()){
-                Customer response = optionalEntity.get();
-                System.out.println(response.getCustomerId());
                 return new ResponseEntity<>(HttpStatus.CONFLICT);
             }
             repository.save(customer);
